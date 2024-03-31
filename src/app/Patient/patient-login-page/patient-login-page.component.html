@@ -1,0 +1,43 @@
+<body>
+    <div class="card">
+        <h1>PATIENT LOGIN</h1>
+    </div>
+    <form class="border p-3 rounded-3" [formGroup]="loginForm">
+        <div class="row">
+            <div class="col-4 mb-3">
+                <label for="email" class="form-label"><b>Email address</b></label>
+            </div>
+            <div class="col-8 mb-3">
+                <input type="email" formControlName="email" class="form-control" placeholder="Ex:-rasool@gmail.com" id="email">
+                <div class="form-text text-danger" *ngIf="Email.errors?.['required'] && (Email.dirty||Email.touched)" >*Email is required</div> 
+                <div class="form-text text-danger" *ngIf="Email.errors?.['email'] && (Email.dirty||Email.touched)" >*Email is Invalid</div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mb-3">
+                <label for="mobileNo" class="form-label"><b>Password</b></label>
+            </div>
+            <div class="col-8 mb-3">
+                <div class="input-group">
+                    <input [type]="type" formControlName="mobileNo" class="form-control" id="mobileNo">
+                    <span (click)="hideShowPassword()" class="fa {{eyeIcon}}"></span>                    
+                </div>
+                <div class="form-text text-danger" *ngIf="MobileNo.errors?.['required'] && (MobileNo.dirty||MobileNo.touched)" >*MobileNo is required</div> 
+                <div class="form-text text-danger" *ngIf="MobileNo.errors?.['pattern'] && (MobileNo.dirty||MobileNo.touched)" >*MobileNo is Invalid</div> 
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6 offset-5">
+                <button type="submit" [disabled]="loginForm.invalid" (click)="onLogin()"
+                    class="btn btn-primary">LIGIN</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-3 offset-4">
+                <a href="./PatientRegester" ><b>NEW USER? REGISTER...</b></a>
+            </div>
+        </div>
+    </form>
+
+</body>

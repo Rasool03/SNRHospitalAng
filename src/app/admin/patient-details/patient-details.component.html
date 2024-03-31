@@ -1,0 +1,49 @@
+<div class="outer">
+    <h1>Patient Details</h1>
+    <div class="patientsTable">
+        <div class="searchDiv">
+            <div class="input-group">
+                <span class="fa-solid fa-magnifying-glass"></span>
+                <input type="search" [(ngModel)]="searchtext" (keyup)="searchPatient()" placeholder="Search Patient" class="form-control">
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>PatientID</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Blood Group</th>
+                    <th>Email</th>
+                    <th>Mobile No</th>
+                    <th>Address</th>
+                    <th>CGHS/Private</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of paginatedPatients">
+                    <td>{{patient.patientID}}</td>
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.dob}}</td>
+                    <td>{{patient.gender}}</td>
+                    <td>{{patient.bloodGroup}}</td>
+                    <td>{{patient.email}}</td>
+                    <td>{{patient.mobileNo}}</td>
+                    <td>{{patient.address}}</td>
+                    <td>{{patient.cghsPrivate}}</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+        <div class="paginate">
+            <app-pagination [currentPage]="currentPage" [totalPages]="totalPages"
+                (pageChange)="onPageChange($event)"></app-pagination>
+        </div>
+    </div>
+</div>
+<div class="form-wrapper">
+    <div class="dept-form">
+
+    </div>
+</div>

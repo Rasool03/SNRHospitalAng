@@ -1,0 +1,25 @@
+
+.outer{  
+    padding: 10px;
+  
+}
+.header h1{
+    text-align: center; 
+}
+form{   
+    width: 60%;
+    align-items: center;
+    margin-left: 200px;
+}
+.row{
+    padding-left: 80px;
+}
+.input-group{
+    height: 35px;
+
+}
+.row span{
+    padding: 10px; 
+   background-color: white;  
+   border-radius: 5px; 
+}

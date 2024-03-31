@@ -1,0 +1,44 @@
+
+.card{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 800px;
+    border: 1px solid #000;
+}
+.card-header{
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+.body-header{
+    height: 50px;    
+}
+.body-content{
+    padding: 20px;
+    margin-left: -16px;
+    margin-bottom: -16px;
+    margin-right: -16px;
+    border: 1px solid #000;
+}
+.input-group input{
+    width: 90px;
+}
+.expire input{
+    width: 80px;
+}
+.cvv input{
+    width: 60px;
+}
+.row{
+    margin-top: 10px;
+}
+.row label{
+width: 200px;
+margin-top: 5px;
+}
+.btns{
+    display: flex;
+    margin-top: 30px;
+    column-gap: 500px;
+}

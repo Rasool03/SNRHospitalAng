@@ -1,0 +1,51 @@
+/* .recordType{
+    margin-top: 30PX;
+    display: flex;
+    justify-content: center;
+   column-gap: 20px;
+}
+.yearMonth{
+    margin-top: 30px;
+   margin-left: 300px;
+}
+.row select{
+    width: 200px;
+}
+.row label{
+    width: 200px;
+}
+table{
+    position: absolute;
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+table th,td{
+    width: 50%;
+    height: 40px;
+    border: 1px solid #000;
+
+} */
+.outer{  
+    padding: 10px;
+  
+}
+.header h1{
+    text-align: center; 
+}
+.hospitalTable{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+table{
+    margin-top: 10px;
+     width: 95%;
+    
+ }
+ table th,td{
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000;
+    width: 85%;
+}

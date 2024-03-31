@@ -1,0 +1,26 @@
+.patientId{
+    text-align: center;
+    margin-top: 30px;
+}
+.patientIdInfo{
+    text-align: center;
+    margin-top: 50px;
+}
+.patientTreatment{
+    padding: 30px;
+}
+.patientPrescription{
+    padding: 30px;
+}
+.patientAdvice{
+    padding: 30px;
+}
+.footerBtn{
+    margin-top: 50px;
+   width: 100%;
+   text-align: right;
+}
+.footerBtn button{
+    width: 20%;
+    margin-right: 20px;
+}

@@ -1,0 +1,42 @@
+.outer{   
+    padding: 10px;   
+}
+h1{
+    text-align: center;
+}
+table{
+    margin-top: 10px;
+     width: 95%;
+     margin-left: 10px;
+ }
+ table th,td{
+     padding: 5px;
+     text-align: center;
+     border: 1px solid #000;
+ }
+ .paginate{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 500px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+ }
+ .searchDiv{
+    position: relative;
+    margin-top: 30px;
+    margin-left: 500px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+ }
+ .input-group{
+    height: 40px;
+    width: 20%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+}
+.input-group span{
+    padding: 10px;
+}

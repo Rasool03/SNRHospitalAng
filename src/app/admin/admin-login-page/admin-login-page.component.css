@@ -1,0 +1,42 @@
+body{
+    height: 599px;
+    width:1360px;  
+    background:linear-gradient(to top,rgb(30, 170, 60) 50%, rgb(168, 91, 133) 90%,rgb(30, 57, 88))no-repeat;
+}
+.card{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 350px;
+    width: 700px;
+    height: 80px;
+    align-items: center;
+    background-color: #316BB0;    
+    border: 5px solid white;
+}
+.card h1{
+    margin-top: 10px;
+    font-size: 40px;
+    color: white;
+}
+form{    
+    position: absolute;
+    width:500px;
+    margin-top: 200px;
+    margin-left: 450px;   
+   
+}
+.input-group{
+    height: 35px;
+
+}
+.row span{
+     padding: 10px; 
+    background-color: white;   
+    border-radius: 5px;
+}
+.row label{
+    margin-top: 10px;
+}
+.row a{
+    color: white;   
+}

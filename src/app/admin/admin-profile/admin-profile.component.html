@@ -1,0 +1,131 @@
+<div class="outer"> 
+    <h1>Welcome to Admin</h1>
+   
+   <div class="adminTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Mobile No</th>
+                <th>Address</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let adm of adminList">
+                <td>{{adm.name}}</td>
+                <td>{{adm.dob}}</td>
+                <td>{{adm.gender}}</td>
+                <td>{{adm.email}}</td>
+                <td>{{adm.mobileNo}}</td>
+                <td>{{adm.address}}</td>
+                <td>{{adm.role}}</td>
+                <td>
+                    <div class="row">
+                        <div class="col-4 mb-1">
+                            <button type="button" class="btn btn-primary" (click)="openAdminEditForm(adm.aId)" >Edit</button>
+                        </div>
+                        <div class="col-4 mb-1">
+                            <button class="btn btn-danger" (click)="deleteAdmin(adm.aId)">Delete</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+  <div class="form-wrapper" *ngIf="showAdminEditForm">
+    <div class="adminEdit-form">
+        <div class="text-center">
+            <h3>Update Admin Details</h3>           
+        </div>
+        <form class="border p-2 rounded-3 mt-3 mb-5" [formGroup]="editAdminForm" (ngSubmit)="submitEditAdmin()" >
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="name" class="form-label"><b>Name:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <input type="text" formControlName="name" placeholder="Enter Name" class="form-control" id="name">
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="dob" class="form-label"><b>DOB:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <input type="date" formControlName="dob"  class="form-control" id="dob">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="gender" class="form-label"><b>Gender:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <select formControlName="gender" class="form-control"  id="gender">
+                        <option *ngFor="let gend of genderType" [value]="gend">{{gend}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="email" class="form-label"><b>Email:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <input type="text" formControlName="email" placeholder="Enter Email" class="form-control" id="email">
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="mobileNo" class="form-label"><b>MobileNo:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <input type="text" formControlName="mobileNo" placeholder="Mobile Number" class="form-control" id="mobileNo">
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="name" class="form-label"><b>Address:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <input type="text" formControlName="address" placeholder="Enter Address" class="form-control" id="address">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="name" class="form-label"><b>Password:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <div class="input-group">
+                    <input [type]="types" formControlName="password" placeholder="Enter Password" class="form-control" id="password">
+                    <span (click)="hideShowPassword()" class="fa {{eyeIcons}}"></span> 
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="name" class="form-label"><b>Role:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                   <select class="form-control" formControlName="role" id="role">
+                    <option *ngFor="let rol of roleDetails" [value]="rol">{{rol}}</option>
+                   </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 offset-4 mt-1">
+                    <button type="submit" class="btn btn-primary">UPDATE</button>
+                </div>
+                <div class="col-3 mb-2 mt-1">
+                    <button type="button"  class="btn btn-secondary" (click)="closeAdminEditForm()">CANCLE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>

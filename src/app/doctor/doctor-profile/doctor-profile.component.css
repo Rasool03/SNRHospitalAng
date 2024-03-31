@@ -1,0 +1,45 @@
+
+.doctorDetails{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 50px;
+    column-gap: 400px;
+}
+.contact{   
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.schedules{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.details{
+    width: 50%;
+}
+.scheduleDays{
+    display: flex;
+    column-gap: 50px;
+    text-align: center;
+    margin-left: 100px;
+}
+h3{
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.doctorImg{
+    width: 50%;
+}
+.doctorImg img{
+    width: 20%;
+}
+.contact h2{
+    margin-left: 0px;
+    font-size: 25px;
+    margin-top: 30px;
+}
+h1{
+    font-size: 25px;
+   text-align: center;   
+   margin-top: 20px;
+}

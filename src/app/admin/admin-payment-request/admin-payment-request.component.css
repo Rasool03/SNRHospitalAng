@@ -1,0 +1,26 @@
+h1{
+    font-size: 25px;
+    margin-top: 50px;
+    text-align: center;
+}
+table{
+    position: absolute;
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+table th,td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #000;
+
+}
+.verifiedBtn{
+    margin-top: 450px;
+    width: 100%;
+    text-align: right;
+}
+.verifiedBtn button{
+    width: 30%;
+    margin-right: 20PX;
+}

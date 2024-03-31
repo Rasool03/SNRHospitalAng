@@ -1,0 +1,120 @@
+<div class="outer">
+    <div class="patientIdDiv">
+        <h2><b>Patient ID : {{patientDetails?.patientID}}</b></h2>
+    </div>
+    <div class="patientRow">
+        <div class="patientDetails">
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>Patient Name : </b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{patientDetails?.name}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>D.O.B : </b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{patientDetails?.dob}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>Age/Gender : </b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{age}}/{{patientDetails?.gender}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>Blood Group : </b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{patientDetails?.bloodGroup}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>Email : </b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{patientDetails?.email}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>Address : </b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{patientDetails?.address}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>Mobile no : </b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{patientDetails?.mobileNo}}</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <label><b>CGHS/Private :</b></label>
+                </div>
+                <div class="col-auto">
+                    <label>{{patientDetails?.cghsPrivate}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="patientIdDetls">
+            <img src="./assets/{{imagePath}}" alt="Image Description">
+
+        </div>
+    </div>
+    <div class="priciptionDetails">
+        <h3>Recent Treatment Details</h3>
+        <div class="row">
+            <div class="col-auto">
+                <b>Treatment Name :</b>
+            </div>
+            <div class="col-auto">
+                <p>{{patientDetails?.name}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <b>Doctor Name :</b>
+            </div>
+            <div class="col-auto">
+                <p>{{patientDetails?.name}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <b>Prescription :</b>
+            </div>
+            <div class="col-auto">
+                <p>{{patientDetails?.name}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <b>Remark :</b>
+            </div>
+            <div class="col-auto">
+                <p>{{patientDetails?.name}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <b>Advice :</b>
+            </div>
+            <div class="col-auto">
+                <p>{{patientDetails?.name}}</p>
+            </div>
+        </div>
+    </div>
+</div>

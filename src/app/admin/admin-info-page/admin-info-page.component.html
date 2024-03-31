@@ -1,0 +1,55 @@
+<body>
+    <main>
+        <div class="displayRecords" *ngIf="showInfo">
+            <div class="card">
+                <h1><b>SNR HOSPITAL</b></h1> 
+            </div>
+            <div class="doctorTable">
+                <div class="doctPrest">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Doctors On Present</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let doct of getDoctorsActive">
+                                <td>{{doct.doctName}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               <div class="doctLeav">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctors On Leave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let docts of getDoctorsInActive">
+                            <td>{{docts.doctName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+               </div>
+               
+            </div>
+        </div>
+        <div class="dispaly">
+            <ng-container #container></ng-container>
+        </div>
+    </main>
+    <aside>
+        <ul>
+            <li (click)="navigateAdminProfile()">Profile</li>
+            <li (click)="navigatePaymentRequest()">Payment Request</li>
+            <li (click)="navigateAddDoctor()">Add Doctors</li>
+            <li (click)="navigateEditDoctor()">Details of Doctors</li>
+            <li (click)="navigateDepartment()">Departments</li>
+            <li (click)="navigatePatientDetails()">PatientDetails</li>
+            <li (click)="navigateRecords()">Records</li>
+            <li (click)="logOut()">Logout</li>
+        </ul>
+    </aside>
+</body>

@@ -1,0 +1,44 @@
+
+.editSchedule h2{
+    font-size: 20px;
+}
+h1{
+    font-size: 25px;
+    margin-top: 25px;
+    margin-left: 380px;
+}
+.editSchedule{
+    display: flex;
+    column-gap: 50px;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+.editSchedule h2{
+    margin-top: 7px;
+}
+.yesOrNoBtns{
+    display: flex;
+    column-gap: 30px;
+}
+.card{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 800px;
+   align-items: center;
+    background-color: aqua;
+    padding: 20px;
+    border: 1px solid #000;
+}
+.row{
+    margin-top: 30px;
+}
+.submit{
+    margin-top: 30px;
+}
+.row label{
+    margin-top: 5px;
+}
+.row input{
+    width: 300px;
+}

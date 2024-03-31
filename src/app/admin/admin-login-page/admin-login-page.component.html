@@ -1,0 +1,40 @@
+<body>
+    <div class="card">
+        <h1>ADMIN LOGIN</h1>
+    </div>
+        <form class="border p-3 rounded-3" [formGroup]="adminLoginForm">
+            <div class="row">
+                <div class="col-3 mb-3">
+                    <label for="email" class="form-label"><b>USERNAME: </b></label>
+                </div>
+                <div class="col-8 mb-3 mt-1">
+                    <input type="eamil" formControlName="email" placeholder="Ex:-rasool@gmail.com" id="email" class="form-control" >
+                    <div class="form-text text-danger" *ngIf="Email.errors?.['required']&&(Email.dirty||Email.touched)">*Email is required</div>
+                    <div class="form-text text-danger" *ngIf="Email.errors?.['email']&&(Email.dirty||Email.touched)">*Email Invalid</div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-3 mb-3 ">
+                    <label for="password" class="form-label"><b>PASSWORD: </b></label>
+                </div>
+                <div class="col-8 mb-3 mt-1">
+                    <div class="input-group">
+                        <input [type]="type" formControlName="password" class="form-control" id="password">
+                        <span (click)="hideShowPassword()" class="fa {{eyeIcon}}"></span>
+                    </div>
+                    <div class="form-text text-danger" *ngIf="Password.errors?.['required']&&(Password.dirty||Password.touched)">*Password is required</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 offset-5">
+                    <button type="submit" [disabled]="adminLoginForm.invalid" (click)="navigateAdminProfile()" class="btn btn-primary">LIGIN</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mt-3 offset-4">
+                    <a href="./adminRegister"><b>New Admin? Register</b></a>
+                </div>
+            </div>
+        </form>  
+</body>
+

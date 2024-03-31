@@ -1,0 +1,54 @@
+     <div class="outer">
+        <h1>Doctors Details</h1>
+        <div class="doctorsTable">
+            <div class="tableHead">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <span class="fa-solid fa-magnifying-glass"></span>
+                            <input type="search" placeholder="Search Doctor" [(ngModel)]="searchtext" (keyup)="filterSearch()" class="form-control">
+                        </div>
+                    </div>
+                   
+                </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <th>Data Of Birth</th>
+                            <th>Specialization</th>
+                            <th>Experience</th>
+                            <th>MobileNo</th>
+                            <th>Email</th>
+                            <th>Schedule</th>
+                            <th>Is Active</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let doct of paginatedDoctors">
+                            <td>{{doct.doctName}}</td>
+                            <td>{{doct.dob}}</td>
+                            <td>{{doct.specialization}}</td>
+                            <td>{{doct.experience}}</td>
+                            <td>{{doct.mobileNo}}</td>
+                            <td>{{doct.email}}</td>
+                            <td>{{doct.schedule}}</td>
+                            <td>  <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" [checked]="doct.isActive" id="isActive" (change)="toggleActive(doct)">
+                              </div></td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-2 mb-1 p-3"> <button class="btn btn-danger" (click)="deleteDoctorRecord(doct.doctId)" > <i class="fa-solid fa-trash-can"></i></button>
+                                    </div>
+                                </div>
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination>
+                </div>           
+        </div>
+     </div>

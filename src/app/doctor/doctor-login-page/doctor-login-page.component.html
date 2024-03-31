@@ -1,0 +1,35 @@
+<body>
+    <div class="card">
+        <h1>DOCTOR LOGIN</h1>
+    </div>
+    <form class="border p-3 rounded-3" [formGroup]="doctLoginForm">
+        <div class="row">
+            <div class="col-4 mb-3">
+                <label for="userName" class="form-label"><b>User Name</b></label>
+            </div>
+            <div class="col-8 mb-3">
+                <input type="userName" formControlName="userName" class="form-control" placeholder="Ex:-Rasool" id="userName">
+                <div class="form-text text-danger" *ngIf="UserName.errors?.['required'] && (UserName.dirty||UserName.touched)" >*User Name is required</div> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mb-3">
+                <label for="password" class="form-label"><b>Password</b></label>
+            </div>
+            <div class="col-8 mb-3">
+                <div class="input-group">
+                    <input [type]="type" formControlName="password" class="form-control" id="password">
+                    <span (click)="hideShowPassword()" class="fa {{eyeIcon}}"></span>                    
+                </div>
+                <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.dirty||Password.touched)" >*Password is required</div> 
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6 offset-5">
+                <button type="submit" [disabled]="doctLoginForm.invalid" (click)="onLogin()"
+                    class="btn btn-primary">LIGIN</button>
+            </div>
+        </div>
+    </form> 
+</body>

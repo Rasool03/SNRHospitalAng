@@ -1,0 +1,27 @@
+main{
+    position: fixed;
+    margin-left: 20px;
+    min-height: 100%;
+    width:80%;
+    border: 1px solid #000;
+}
+ul{
+    width: 18.5%;
+    margin-left: 1112px; 
+    border: 1px solid #000;
+}
+ul li{
+    width: 113%;
+    height: 30px;
+    margin-left: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+}
+ul li:not(:last-child){    
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+ul li:hover{
+    background-color: rgba(0,0,0,0.2);
+}

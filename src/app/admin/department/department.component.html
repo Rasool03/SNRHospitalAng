@@ -1,0 +1,84 @@
+<div class="outer">
+    <h1>Departments</h1>
+    <div class="depatmentTable">
+        <div class="tableHead">
+            <div class="row">
+                <div class="col-5">
+                    <div class="input-group">
+                        <span class="fa-solid fa-magnifying-glass"></span>
+                        <input type="search" [(ngModel)]="searchtext" placeholder="Search Department"
+                            (keyup)="filterSearch()" class="form-control">
+                    </div>
+                </div>
+                <div class="col-7">
+                    <button class="btn btn-primary" (click)="openDeptForm()">Add Department</button>
+                </div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Consultant Fee</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dept of paginatedDepartments">
+                    <td>{{dept.deptName}}</td>
+                    <td>{{dept.consultFee}}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-5 mb-1">
+                                <button class="btn btn-primary" (click)="openDeptForm(dept.deptId)">Edit</button>
+                            </div>
+                            <div class="col-2 mb-1">
+                                <button class="btn btn-danger" (click)="deleteDepartment(dept.deptId)">Delete</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="paginate">
+            <app-pagination [currentPage]="currentPage" [totalPages]="totalPages"
+                (pageChange)="onPageChange($event)"></app-pagination>
+        </div>
+    </div>
+</div>
+<div class="form-wrapper" *ngIf="showForm">
+    <div class="dept-form">
+        <h1>{{formHeader}}</h1>
+        <form class="border p-2 rounded-3 mt-3 mb-5" [formGroup]="deptForm" (ngSubmit)="saveDeprtForm()">
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="deptName" class="form-label"><b>Department Name:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <input type="text" formControlName="deptName" placeholder="Enter Department Name"
+                        class="form-control" id="name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-2 mt-2">
+                    <label for="consultFee" class="form-label"><b>Consult Fee:</b></label>
+                </div>
+                <div class="col-8 mb-2">
+                    <input type="text" formControlName="consultFee" placeholder="Enter consult Fee" class="form-control"
+                        id="consultFee">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 mb-1">
+
+                </div>
+                <div class="col-2 mb-1">
+                    <button type="submit" class="btn btn-primary">SAVE</button>
+                </div>
+                <div class="col-2 mb-1">
+                    <button class="btn btn-secondary" (click)="cancle()">CANCLE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

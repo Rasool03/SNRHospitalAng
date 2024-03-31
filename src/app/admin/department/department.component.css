@@ -1,0 +1,60 @@
+.outer{   
+    padding: 10px;   
+}
+h1{
+    text-align: center;
+}
+.tableHead{
+    width: 100%;
+    margin-left: 200px;
+}
+table{
+    margin-top: 10px;
+     width: 95%;
+     margin-left: 50px;
+ }
+ table th,td{
+     padding: 5px;
+     text-align: center;
+     border: 1px solid #000;
+ }
+ .form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
+ }
+ .dept-form{
+    background-color: white;
+    width:  800px;
+    padding: 20px 50px;
+    border-radius: 5px;
+ }
+ .addBtn{
+    text-align: right;
+ }
+ .paginate{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 500px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+ }
+
+ .input-group{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+}
+.input-group span{
+    padding: 10px;
+}

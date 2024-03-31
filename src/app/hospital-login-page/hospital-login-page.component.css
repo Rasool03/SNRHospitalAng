@@ -1,0 +1,64 @@
+body{
+    height: 599px;
+    width:1360px;   
+  background:linear-gradient(to top,rgb(168, 91, 133) 50%, rgb(30, 170, 60) 90%,rgb(30, 57, 88))no-repeat;
+}
+.card{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 280px;
+    height: 100px;
+    width: 800px;
+    border-width: 5px;
+    border-radius: 8px;
+    border-color: white;
+    background-color: #4F81BC;
+    color: white;
+    padding-left: 250px;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.adminDiv button{
+    position: absolute;
+    margin-top: 300px;
+    height: 120px;
+    width:300px;
+    margin-left: 20px;
+    display: grid;
+    row-gap: 0.2px;
+    background-color: #316BB0;
+}
+.adminDiv button img{
+   margin-left: 98px;
+}
+
+.patientDiv button{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 950px;
+    width:300px;
+    display: grid;
+    row-gap: 0.2px;
+    background-color: #316BB0;
+}
+.patientDiv button img{
+    margin-left: 98px;
+ }
+.doctorDiv button{
+    position: absolute;
+    margin-top: 400px;
+    margin-left: 500px;
+    width:300px;
+    display: grid;
+    row-gap: 0.2px;
+    background-color: #316BB0;
+}
+.doctorDiv button img{
+    margin-left: 98px;
+ }
+ h1{
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 10px;
+ }

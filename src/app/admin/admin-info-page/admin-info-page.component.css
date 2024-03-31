@@ -1,0 +1,76 @@
+main{
+    position: absolute;
+    margin-left: 20px;
+    min-height: 100%;
+    width:1115px;
+    border:1px solid #000;
+}
+ul{
+    position: absolute;
+    width:16.8%;
+    margin-left: 1135px;
+    border:1px solid #000;
+}
+ul li{
+    width: 113%;
+    height: 50px;
+    margin-left: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+}
+ul li:not(){
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+ul li:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.card{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 180px;
+    height: 100px;
+    width: 800px;
+    border-width: 5px;
+    border-radius: 8px;
+    border-color: white;
+    background-color: #4F81BC;
+    color: white;
+    padding-left: 250px;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ h1{
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 10px;
+ }
+ .doctorTable{
+    display: flex;   
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 10%;
+    padding: 30px;
+    width: 100%;
+ }
+ .doctPrest{
+    padding: 30px;
+    width: 30%;
+ }
+ .doctLeav{
+    padding: 30px;
+    margin-left: 30%;
+    width: 30%;
+ }
+ table{
+    margin-top: 10px;
+     width: 80%;
+    
+ }
+ table th,td{
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #000;
+}

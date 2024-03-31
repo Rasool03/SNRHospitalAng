@@ -1,0 +1,15 @@
+<body>
+    <main>
+        <div class="display">
+            <ng-container #container></ng-container>
+        </div>
+    </main>
+    <aside>
+        <ul>
+            <li (click)="navigateDoctorProfile()">Profile</li>
+            <li (click)="navigateDoctorAppointment()">My Appointments</li>
+            <li (click)="navigateAddPrescription()">Add Prescription</li>
+            <li (click)="logOut()">Logout</li>
+        </ul>
+    </aside>
+</body>

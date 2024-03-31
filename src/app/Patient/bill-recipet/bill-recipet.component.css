@@ -1,0 +1,43 @@
+body{
+    height: 580px;    
+}
+main{
+    position: absolute;
+    margin-left: 20px;
+    height: 100%;
+    width:1210px;    
+    border: 1px solid #000;
+    padding: 30px;
+}
+h1{
+    font-size: 25px;
+    text-align: center;
+}
+table{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+table th,td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #000;
+}
+.patientDetails{
+  display:flex;
+  margin-top: 20px;
+  column-gap: 50px;
+
+}
+.row label{
+    width:120px;
+}
+.signature img{
+    height: 50px;
+    width: 80px;
+    margin-top: 300px;
+   margin-left: 1000px;   
+}
+.footerBtns button{
+    margin-left: 50px;
+}
