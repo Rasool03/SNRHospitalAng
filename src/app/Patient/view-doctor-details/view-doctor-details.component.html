@@ -1,6 +1,6 @@
 
 <h1>LIST OF DOCTORS AND THEIR DEPARTMENT</h1>
-<input type="text" placeholder="Search By Department of Doctor's Name">
+
 <div class="doctorsTable">
 <table>
     <thead>
@@ -12,10 +12,10 @@
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td>aaa</td>
-        <td>aaa</td>
-        <td>aaa</td>
+    <tr *ngFor="let doctLists of mergedData">
+        <td>{{doctLists.doctName}}</td>
+        <td>{{doctLists.deptName}}</td>
+        <td>{{doctLists.consultFee}}</td>
     </tr>
 </tbody>
 </table>

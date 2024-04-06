@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/service/auth.service';
@@ -18,14 +18,18 @@ appointmentForm:any
 deptFeeList:any
 detFee:any
 consultantFeeValue:any;
+showForm=false;
+confimAppDetails:any
   constructor(private fb:FormBuilder,private router:Router,private authService:AuthService,private service:SerivesService,private toast:NgToastService) {
 this.appointmentForm=this.fb.group({
   pId:this.patientId,
-  specialization:[''],
+  specialization:['',Validators.required],
   doctorName:[''],
   consultantFee:[''],
-  date:[''],
-  time:['']
+  date:['',Validators.required],
+  time:[''],
+  paymentMethod:['',Validators.required],
+  mobileNo:['',Validators.required]
 })
    }
 
@@ -64,17 +68,29 @@ this.appointmentForm=this.fb.group({
     })
   }
   saveAppoint(){
-    this.appointmentForm.value.pId=this.patientId
-    this.appointmentForm.value.consultantFee=this.consultantFeeValue
-    this.service.creteAppointments(this.appointmentForm.value).subscribe({
-      next:(data:any)=>{
-        this.toast.success({detail:"Success Message",summary:'Record is Created..',duration:5000})
-        this.appointmentForm.reset();
-
+    if(this.appointmentForm.valid)
+      {        
+        this.appointmentForm.value.pId=this.patientId
+        this.appointmentForm.value.consultantFee=this.consultantFeeValue
+        this.confimAppDetails=this.appointmentForm.value
+        this.service.creteAppointments(this.appointmentForm.value).subscribe({
+          next:(data:any)=>{
+            this.toast.success({detail:"Success Message",summary:'Record is Created..',duration:5000})
+            this.appointmentForm.reset();
+            this.showForm=false;
+    
+          }
+        })
       }
-    })
+  
   }
   cancleApp(){
     this.appointmentForm.reset();
+    this.showForm=false;
+  }
+  openPayment(){
+    this.showForm=true;
+    this.appointmentForm.value.consultantFee=this.consultantFeeValue
+    this.confimAppDetails=this.appointmentForm.value
   }
 }

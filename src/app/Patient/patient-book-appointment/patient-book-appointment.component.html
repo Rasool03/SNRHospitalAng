@@ -2,7 +2,7 @@
   <div class="header">
     <h1><b>Book Appointment</b></h1>
   </div>
-  <form class="border p-2 rounded-3 mt-3 mb-5" [formGroup]="appointmentForm"(ngSubmit)=saveAppoint() >
+  <form class="border p-2 rounded-3 mt-3 mb-5" [formGroup]="appointmentForm" (ngSubmit)=saveAppoint() >
     <div class="row">
       <div class="col-3 mb-2 mt-2">
         <label for="specialization" class="form-label"><b>Department</b></label>
@@ -57,7 +57,7 @@
   </div>
   <div class="row">
     <div class="col-3 offset-4 mt-1">
-        <button type="submit"  class="btn btn-primary">Book Appointment</button>
+        <button type="button"  class="btn btn-primary" (click)="openPayment()">Book Appointment</button>
     </div>
     <div class="col-3 mb-2 mt-1">
         <button type="button" class="btn btn-secondary" (click)="cancleApp()" >CANCLE</button>
@@ -65,3 +65,101 @@
 </div>
   </form>
 </div>
+<div class="form-wrapper" *ngIf="showForm">
+  <div class="payment-form">
+    <h1>Confirm the Appointment and Pay Amount</h1>
+    <div class="detailsApp">
+      <form [formGroup]="appointmentForm" (ngSubmit)=saveAppoint()>
+      <div class="row">
+       <div class="col-6">
+         <label  class="form-label"><b>Department Name:</b></label>
+       </div>
+       <div class="col-6">
+       {{confimAppDetails.specialization}}
+       </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label  class="form-label"><b>Doctor Name:</b></label>
+        </div>
+        <div class="col-6">
+        {{confimAppDetails.doctorName}}
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-6">
+          <label  class="form-label"><b>Consultant Fee:</b></label>
+        </div>
+        <div class="col-6">
+        {{confimAppDetails.consultantFee}}
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-6">
+          <label  class="form-label"><b>Date:</b></label>
+        </div>
+        <div class="col-6">
+        {{confimAppDetails.date}}
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-6">
+          <label  class="form-label"><b>Time:</b></label>
+        </div>
+        <div class="col-6">
+        {{confimAppDetails.time}}
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-6 mb-2">
+          <label  class="form-label"><b>SELECT PAYMENT METHOD:</b></label>
+        </div>
+        <div class="col-6 mb-2">
+          <select  formControlName="paymentMethod" class="form-control"  >
+            <option >--Select METHOD--</option>
+            <option value="phonepe" >PHONE PE</option>
+            <option value="paytm" >PAY TM</option>
+            <option value="cash" >CASH</option>          
+        </select>
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-6 mb-2">
+          <label  class="form-label"><b>Enter Mobile No:</b></label>
+        </div>
+        <div class="col-6 mb-2">
+          <input type="text" formControlName="mobileNo" class="form-control">
+        </div>
+       </div>
+       <div class="row">
+        <div class="col-5">
+          <button type="submit"  class="btn btn-primary">Confirm Appointment</button>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-secondary" (click)="cancleApp()" >CANCLE</button>
+        </div>
+       </div>
+      </form>
+     </div>
+  </div>
+ 
+</div>
+
+<!-- consultantFee
+: 
+580
+date
+: 
+""
+doctorName
+: 
+"--Select Doctor--"
+pId
+: 
+"25"
+specialization
+: 
+"UROLOGY"
+time
+: 
+"" -->
