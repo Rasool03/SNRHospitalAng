@@ -5,7 +5,7 @@ h1{
 }
 table{
     position: absolute;
-    margin-top: 100px;
+    margin-top: 20px;
     margin-left: 100px;
 }
 table th,td{
@@ -13,3 +13,11 @@ table th,td{
     text-align: center;
     border: 1px solid #000;
 }
+.paginate{
+    position: absolute;
+    margin-top: 320px;
+    margin-left: 500px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+ }

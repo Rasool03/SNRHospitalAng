@@ -12,11 +12,14 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let doctLists of mergedData">
+    <tr *ngFor="let doctLists of paginatedDoctors">
         <td>{{doctLists.doctName}}</td>
-        <td>{{doctLists.deptName}}</td>
-        <td>{{doctLists.consultFee}}</td>
+        <td>{{doctLists.department.deptName}}</td>
+        <td>{{doctLists.department.consultFee}}</td>
     </tr>
 </tbody>
 </table>
+<div class="paginate">
+    <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination>
+</div>
 </div>

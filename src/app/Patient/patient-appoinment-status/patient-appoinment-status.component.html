@@ -5,23 +5,29 @@
             <tr>
                 <th>Patient Id</th>
                 <th>Doctor Name</th>
-                <th>Dept</th>
+                <th>Department</th>
                 <th>Consultant Fee</th>
+                <th>Date</th>
                 <th>Status</th>
-                <th>Cancle</th>
+                <th>Cancel Reson</th>
                 <th>Payment</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>aaa</td>
-                <td>aaa</td>
-                <td>aaa</td>
-                <td>aaa</td>
-                <td>aaa</td>
-                <td>aaa</td>
-                <td>aaa</td>
+            <tr *ngFor="let appDet of paginatedAppoint">
+                <td>{{appDet.patient.patientID}}</td>
+                <td>{{appDet.doctorName}}</td>
+                <td>{{appDet.specialization}}</td>
+                <td>{{appDet.consultantFee}}</td>
+                <td>{{appDet.date}}</td>
+                <td>{{appDet.status}}</td>
+                <td>{{appDet.cancelReson}}</td>
+                <td>{{appDet.paymentMethod}}</td>
             </tr>
         </tbody>
         </table>
+        <div class="paginate">
+            <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-pagination>
+        </div>
       </div>
+      

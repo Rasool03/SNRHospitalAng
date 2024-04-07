@@ -8,49 +8,38 @@ import { SerivesService } from 'src/app/service/serives.service';
   styleUrls: ['./view-doctor-details.component.css']
 })
 export class ViewDoctorDetailsComponent implements OnInit {
-  departments:any;
-  doctorsData:any;
-  mergedData:any[]= [];
-  constructor(private authService:AuthService,private service:SerivesService) { }
+  departments: any;
+  doctorsData: any;
+  mergedData: any[] = [];
+  currentPage=1;
+  itemsPerPage=5;
+  constructor(private authService: AuthService, private service: SerivesService) { }
 
   ngOnInit(): void {
-    this.getAllDepartments();
     this.doctorsList();
-   
+
   }
-  getAllDepartments(){
-    this.authService.getAllDepartmentsList().subscribe({
-      next:(data:any)=>{
-        this.departments=data;
-        console.log(12,this.departments)
-      }
-    })
-    
-  }
-  doctorsList(){
+
+  doctorsList() {
     this.service.getDoctorList().subscribe({
-      next:(data:any)=>{
-this.doctorsData=data
-console.log(123,this.doctorsData)
-this.mergeData();
+      next: (data: any) => {
+        this.doctorsData = data
       }
-      
+
     })
-   
+
   }
-  mergeData(){
-    for(let depoartment of this.departments)
-    {
-      let doctor=this.doctorsData.find((d:any)=>d.specialization==depoartment.deptName);
-      if(doctor){
-        this.mergedData.push({
-          deptName:depoartment.deptName,
-          consultFee:depoartment.consultFee,
-          doctName:doctor.doctName
-        });
-        console.log(333,this.mergedData)
-      }
-     
-    }
-  }
+get totalItems():number{
+  return this.doctorsData.length;
+}
+get totalPages():number{
+  return Math.ceil(this.totalItems/this.itemsPerPage);
+}
+get paginatedDoctors():any[]{
+  const startIndex=(this.currentPage-1) * this.itemsPerPage;
+  return this.doctorsData.slice(startIndex,startIndex+this.itemsPerPage)
+}
+onPageChange(page: number) {
+  this.currentPage = page;
+}
 }

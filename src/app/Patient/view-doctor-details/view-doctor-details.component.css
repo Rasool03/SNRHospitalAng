@@ -24,3 +24,11 @@ table th,td{
     text-align: center;
     border: 1px solid #000;
 }
+.paginate{
+    position: absolute;
+    margin-top: 35%;
+    margin-left: 500px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+ }

@@ -31,4 +31,9 @@ private baseUrl:string="http://localhost:5022/api/"
   creteAppointments(data:any){
     return this.http.post<any>(`${this.baseUrl}Appointment/Create`,data)
   }
+  getAppointmentDetails(id:number){
+    let params=new HttpParams();
+    params=params.append('patientId',id);
+    return this.http.get<any>(`${this.baseUrl}Appointment`,{params})
+  }
 }
